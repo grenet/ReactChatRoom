@@ -1,12 +1,12 @@
 import { useCollection } from 'react-firebase-hooks/firestore'
-import { collection, query, orderBy } from 'firebase/firestore'
+import { collection, query, orderBy, limitToLast } from 'firebase/firestore'
 
 import { db } from '../firebase'
 import Message from '../parts/Message'
 
 const MessageList = () => {
   const messageRef = collection(db, 'chatrooms', 'room1', 'messages')
-  const [value] = useCollection(query(messageRef, orderBy('timestamp', 'asc')))
+  const [value] = useCollection(query(messageRef, orderBy('timestamp', 'asc'), limitToLast(25)))
 
   return (
     <>
