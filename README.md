@@ -1,7 +1,7 @@
 # ReactChatRoom
 Vite + React + TypeScriptのチャットアプリケーションサンプル。
 
-## Firabase
+## Firebase
 BackendはFirebase Authentication, Cloud Firestore, Storageを使用しているため、
 FireBaseのConfigは.envで設定を行う。
 
